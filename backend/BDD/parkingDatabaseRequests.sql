@@ -21,9 +21,9 @@ CREATE TABLE Place (
 -- Table 'Ticket'
 CREATE TABLE Ticket (
     id INT PRIMARY KEY,
-    numeroPlace INT NOT NULL,
     dateEntree DATETIME NOT NULL,
     dateSortie DATETIME,
     parkingId INT,
     FOREIGN KEY (parkingId) REFERENCES Parking(id)
+    FOREIGN KEY (numeroPlace) REFERENCES Place(id)
 );
