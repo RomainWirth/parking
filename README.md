@@ -15,14 +15,17 @@ Nous partirons dans un premier temps sur un nombre limité de places : 20 places
 Vérification que Node.js soit installé sur la machine.<br> 
 On peut installer Create React App en utilisant la commande npx :<br>
 ```bash
-create-react-app my-parking-app --template typescript 
+npx create-react-app my-parking-app --template typescript 
 ``` 
 pour créer un projet React avec TypeScript.<br> 
 Pour le backend avec NestJS, on peut installer le générateur de NestJS en utilisant la commande :<br> 
 ```bash
 npm install -g @nestjs/cli. 
 ``` 
-On crée ensuite un nouveau projet NestJS en utilisant nest new backend.
+On crée ensuite un nouveau projet NestJS en utilisant :
+```bash
+nest new backend.
+``` 
 
 2. Modélisation de la BDD :<br> 
 Choix d'une base de données qui correspond aux besoins.<br> 
