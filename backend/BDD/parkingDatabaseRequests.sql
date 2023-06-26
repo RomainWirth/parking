@@ -4,13 +4,13 @@ DROP TABLE IF EXISTS `ticket`;
 
 -- Table 'Place'
 CREATE TABLE Place (
-    id INT PRIMARY KEY,
-    numero INT NOT NULL,
+    place_id INT PRIMARY KEY AUTOINCREMENT,
+    place_number INT NOT NULL,
 );
 
 -- Table 'Ticket'
 CREATE TABLE Ticket (
-    id INT PRIMARY KEY,
+    ticket_id INT PRIMARY KEY AUTOINCREMENT,
     created_at DATETIME NOT NULL,
     endDate DATETIME NOT NULL,
     placeId INT NOT NULL,
