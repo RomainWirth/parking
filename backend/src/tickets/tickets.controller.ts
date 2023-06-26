@@ -1,9 +1,12 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
+import { TicketService } from './tickets.service';
 
 @Controller('tickets')
 export class TicketsController {
-    @Post()
-    addTicket(): any {
-        
-    }
+    constructor(private ticketsService: TicketService) {}
+
+    // @Post()
+    // addTicket(@Body('ticketNumber') ticketId: number, @Body('')): any {
+    //     this.ticketsService.insertTicket();
+    // }
 }

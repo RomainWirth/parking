@@ -5,5 +5,7 @@ import { Ticket } from './ticket.model';
 export class TicketService {
     tickets: Ticket[] = [];
 
-    insertPlace(place: number) {}
+    insertTicket(created_at: Date, endDate: Date) {
+        // const newTicket = new Ticket(new Date().toString(), created_at, endDate, );
+    }
 }
