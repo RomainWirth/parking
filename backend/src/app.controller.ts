@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { InjectRepository } from 'typeorm';
 import { AppService } from './app.service';
 
 @Controller()

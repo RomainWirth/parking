@@ -29,15 +29,22 @@ nest new backend.
 
 2. Modélisation de la BDD :<br> 
 Choix d'une base de données qui correspond aux besoins.<br> 
-Les bases de données relationnelles comme MySQL, PostgreSQL ou SQLite sont couramment utilisées pour les applications web.<br> 
-Les bases de données NoSQL comme MongoDB ou Firebase Firestore peuvent également être des options intéressantes.<br> 
-Conception du schéma de base de données en décidant des entités telles que les parkings, les véhicules, les utilisateurs, etc., ainsi que des relations entre elles.
+J'ai choisi une BDD SQLite : open-source et suit la syntaxe sql.
+Conception du schéma de base de données en décidant des entités : une table Place et une table Ticket.<br> 
+Place contient :
+* une Id (clé primaire) 
+* un numéro de place (integer not null).<br>
+Ticket contient :
+* une Id (clé primaire),
+* une date de création (datetime not null),
+* une date de fin (datetime not null),
+* un identifiant de place (integer not null),
+* une clé étrangère : identifiant de place faisant référence à la table place(id).
 
 3. Mise en place du backend avec NestJS :<br> 
 Utilisation de NestJS pour créer le backend.<br> 
 Définition des routes, des contrôleurs et des services nécessaires pour gérer les opérations de gestion de parking.<br> 
-(création, la mise à jour et la suppression de parkings, gestion des utilisateurs, etc.)<br> 
-Intégration de la base de données en utilisant l'ORM (Object-Relational Mapping) de votre choix, tel que TypeORM ou Sequelize.
+(création, la mise à jour et la suppression des places de parking, et des tickets).
 
 4. Développement du frontend avec React :<br> 
 Utilisation de React pour créer l'interface utilisateur de l'application.<br> 
@@ -46,7 +53,7 @@ Utilisation de Redux pour gérer l'état global de l'application et faciliter la
 
 5. Connection du frontend et du backend :<br> 
 Établissement des appels API depuis le frontend vers le backend pour récupérer et manipuler les données.<br> 
-Utilisation des bibliothèques telles que Axios ou Fetch pour effectuer des requêtes HTTP vers votre API NestJS.
+Utilisation des bibliothèques telles que Axios ou Fetch pour effectuer des requêtes HTTP vers l'API NestJS.
 
 ## Schéma de données : 
 BDD parkingDatabase.sqlite 

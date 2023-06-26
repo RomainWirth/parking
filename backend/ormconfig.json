@@ -1,0 +1,7 @@
+{
+    "type": "sqlite",
+    "database": "./BDD/parkingDatabase.sqlite",
+    "entities": ["src/entities/*.ts"],
+    "synchronize": true
+  }
+  
