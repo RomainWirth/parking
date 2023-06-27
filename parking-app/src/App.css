@@ -31,3 +31,8 @@
   background-color: #FFFFF2;
   border: 2px solid #000;
 }
+.pkgSlotContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
