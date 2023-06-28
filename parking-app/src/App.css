@@ -38,6 +38,11 @@
 }
 .pkgSlot {
   color: #FFFFF2;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 .pkgSlot .button {
   height: 20px;

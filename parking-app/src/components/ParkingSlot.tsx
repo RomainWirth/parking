@@ -7,7 +7,7 @@ const ParkingSlot = ({ parkingPlaces, handleReleaseCar }: { parkingPlaces: Parki
     return <>{
         parkingPlaces.map(p =>
             <div key={p.id} className="pkgSlot">
-                Place n°{p.id}
+                <p>Place n°{p.id}</p>
                 { p.occupied && <Button onClick={ () => handleReleaseCar(p.id)} label="libérer" /> }
             </div>
         )
