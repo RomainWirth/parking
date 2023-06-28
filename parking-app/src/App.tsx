@@ -3,36 +3,60 @@ import './App.css';
 import Button from './components/Button';
 import ParkingSlot from './components/ParkingSlot';
 
-export class Parking {
-
-  _tickets:number[];
-
-  constructor(tickets:number[] = []) {
-    this._tickets = tickets
-  }
-
-  addTicket(): Parking {
-    return new Parking([... this._tickets, this._tickets.length])
-  }
-
-  public get ticket() {
-    return this._tickets;
-  }
-
-  
+export interface ParkingPlace {
+  id: number;
+  occupied: boolean;
 }
 
+
 const App: React.FC = () => {
-  const [place, setPlace] = useState<Parking>(new Parking());
-  console.log(place);
+  const [parkingPlaces, setParkingPlaces] = useState<ParkingPlace[]>(
+    [
+      {
+        id: 1,
+        occupied: false
+      },
+      {
+        id: 2,
+        occupied: false
+      },
+      {
+        id: 3,
+        occupied: false
+      },
+      {
+        id: 4,
+        occupied: false
+      }
+    ]
+  );
+
+  const handleParkCar = () => {
+    const newParkingPlaces = [...parkingPlaces];
+    const availablePlace = newParkingPlaces.find(place => !place.occupied);
+
+    if (availablePlace) {
+      availablePlace.occupied = true;
+      setParkingPlaces(newParkingPlaces);
+    }
+  };
+
+  const handleReleaseCar = (placeId: number) => {
+    const newParkingPlaces = [...parkingPlaces];
+    const placeToRelease = newParkingPlaces.find(place => place.id === placeId);
+
+    if (placeToRelease) {
+      placeToRelease.occupied = false;
+      setParkingPlaces(newParkingPlaces);
+    }
+  };
+
   return (
     <div className="App">
       <span className="heading">Parking-app</span>
-      <Button onClick={ () => {
-        setPlace(place.addTicket())
-      } }/>
+      <Button onClick={handleParkCar} label={"ticket"}/>
       <div className="pkgSlotContainer">
-        <ParkingSlot place={ place }/>
+        <ParkingSlot parkingPlaces={ parkingPlaces } handleReleaseCar={handleReleaseCar}/>
       </div>
     </div>
   );

@@ -1,10 +1,16 @@
 import React from "react";
-import { Parking } from "../App";
+import { ParkingPlace } from "../App";
+import Button from "./Button";
 // import "./syles.css";
 
-const ParkingSlot = ({place}: {place: Parking}) => {
+const ParkingSlot = ({ parkingPlaces, handleReleaseCar }: { parkingPlaces: ParkingPlace[], handleReleaseCar: (id:number) => void }) => {
     return <>{
-        place.ticket.map( p => <div key={p} className="pkgSlot">Place n°{p}</div>)
+        parkingPlaces.map(p =>
+            <div key={p.id} className="pkgSlot">
+                Place n°{p.id}
+                { p.occupied && <Button onClick={ () => handleReleaseCar(p.id)} label="libérer" /> }
+            </div>
+        )
     }</>
 };
 

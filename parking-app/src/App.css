@@ -23,7 +23,7 @@
   }
 }
 
-.ticket {
+.button {
   font-weight: bold;
   width: 120px;
   height: 40px;
@@ -35,4 +35,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+.pkgSlot {
+  color: #FFFFF2;
+}
+.pkgSlot .button {
+  height: 20px;
+  width: 80px;
 }
